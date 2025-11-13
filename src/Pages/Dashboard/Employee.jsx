@@ -1,8 +1,12 @@
 import React from 'react'
-const Employee = () => {
-  return (
-    <div>Employee</div>
-  );
-};
+import { EmployeeList } from '../../Components/EmployeeList'
+import { AttendanceActivity } from '../../Components/AttendanceActivity'
 
-export default Employee;
+export const Employee = () => {
+  return (
+    <div className='min-h-screen'>
+      <div><EmployeeList></EmployeeList> </div>
+      <div><AttendanceActivity></AttendanceActivity> </div>
+    </div>
+  )
+}
