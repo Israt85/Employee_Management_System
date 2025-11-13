@@ -8,10 +8,10 @@ export const DashboardNav = () => {
          </div>
           <div className='lg:block hidden '>
 
-<div className='w-full h-20 py-6 justify-between text-black flex flex-row bg-transparent'>
-   <div className='text-[#2b12bb] mx-10 text-2xl'>
-   EMPLOYEEs
-   </div>
+<div className='w-full h-20 mx-4 py-6 justify-between text-black flex flex-row bg-transparent'>
+<div className="text-2xl font-bold text-indigo-600 tracking-tight">
+            AURORA<span className="text-gray-700">HR</span>
+          </div>
 
    <div>
    <div className="relative w-80">

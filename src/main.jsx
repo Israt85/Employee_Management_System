@@ -8,12 +8,13 @@ import { Dashboard } from './Pages/Dashboard/Dashboard.jsx'
 import { Employee } from './Pages/Dashboard/Employee.jsx'
 import { Jobs } from './Pages/Dashboard/Jobs.jsx'
 import { Department } from './Pages/Dashboard/Department.jsx'
-import { Assests } from './Pages/Dashboard/Assests.jsx'
 import { Recruitment } from './Pages/Dashboard/Recruitment.jsx'
 import { SignUp } from './Pages/SignUp/SignUp.jsx'
 import { Leave } from './Pages/Dashboard/Leave.jsx'
 import OverView from './Pages/Dashboard/OverView.jsx'
 import Home from './Pages/Home/Home.jsx'
+import Assets from './Pages/Dashboard/Assets.jsx'
+
 
 
 
@@ -31,7 +32,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="menu" element={<Department />} />
           <Route path="job" element={<Jobs />} />
           <Route path="employee" element={<Employee />} />
-          <Route path="assets" element={<Assests />} />
+          <Route path="assets" element={<Assets/>} />
           <Route path="recruitment" element={<Recruitment />} />
           <Route path="leave" element={<Leave />} />
         </Route>
