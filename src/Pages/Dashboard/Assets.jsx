@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react' 
+import AssetList from '../../Components/AssetsOverview';
 
-const Assets = () => {
-  return (
-    <div>Assets</div>
-  );
-};
-export default Assets;
+  const Assets = () => {
+     return ( <div> <AssetList></AssetList> 
+     
+     </div> 
+
+     ); }; 
+     export default Assets;

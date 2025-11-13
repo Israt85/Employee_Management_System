@@ -55,7 +55,7 @@ export const EmployeeList = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 w-[850px]">
         <div className="flex justify-end mx-10">
             <AddEmployeebtn></AddEmployeebtn>
         </div>
