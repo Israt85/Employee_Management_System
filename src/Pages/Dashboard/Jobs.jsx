@@ -1,8 +1,13 @@
-import React from 'react'
+import { JobApplicationStatus } from "../../Components/JobApplicationStatus"
+import { JobListingsDropdown } from "../../Components/JobListingsDropdown"
 
-const Jobs = () => {
+
+export const Jobs = () => {
   return (
-    <div>Jobs</div>
-  );
-};
-export default Jobs;
+    <div>
+      <JobListingsDropdown></JobListingsDropdown>
+
+      <JobApplicationStatus></JobApplicationStatus>
+          </div>
+  )
+}

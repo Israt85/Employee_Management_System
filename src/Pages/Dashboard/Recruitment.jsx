@@ -1,7 +1,7 @@
 import React from 'react'
-const Recruitment = () => {
+
+export const Recruitment = () => {
   return (
     <div>Recruitment</div>
-  );
-};
-export default Recruitment
+  )
+}
