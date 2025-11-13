@@ -13,6 +13,7 @@ import { Recruitment } from './Pages/Dashboard/Recruitment.jsx'
 import { SignUp } from './Pages/SignUp/SignUp.jsx'
 import { Leave } from './Pages/Dashboard/Leave.jsx'
 import OverView from './Pages/Dashboard/OverView.jsx'
+import Home from './Pages/Home/Home.jsx'
 
 
 
@@ -20,7 +21,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        
+         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
 
