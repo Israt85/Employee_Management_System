@@ -14,6 +14,7 @@ import { Leave } from './Pages/Dashboard/Leave.jsx'
 import OverView from './Pages/Dashboard/OverView.jsx'
 import Home from './Pages/Home/Home.jsx'
 import Assets from './Pages/Dashboard/Assets.jsx'
+import { AuthProvider } from './Contexts/AuthContext.jsx'
 
 
 
@@ -21,7 +22,8 @@ import Assets from './Pages/Dashboard/Assets.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
+     <AuthProvider>
+       <Routes>
          <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
@@ -37,6 +39,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="leave" element={<Leave />} />
         </Route>
       </Routes>
+     </AuthProvider>
     </BrowserRouter>
   </StrictMode>
 )

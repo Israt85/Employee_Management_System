@@ -5,7 +5,7 @@ import SalaryPieChart from "../../Components/SalaryPieChart";
 
 const OverView = () => {
   return (
-    <div className='ml-8 w-[850px]'>
+    <div className='ml-8 w-[800px]'>
       <div className='flex mt-4 justify-between items-center'>
         <div className='text-2xl mt-2 font-semibold text-[#2b12bb]'>Analytics Overview</div>
         <div className='w-48 bg-white h-10 border flex justify-center rounded'>

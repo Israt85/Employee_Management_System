@@ -22,7 +22,7 @@ export const Dashboard = () => {
    <div className='w-full min-h-screen bg-blue-100'>
     <DashboardNav></DashboardNav>
      <div className=' flex'>
-      <div className='w-72 min-h-screen bg-linear-to-b from-sky-200 to-sky-400'>
+      <div className='w-72 min-h-screen bg-linear-to-b from-[#9f8ff7] to-sky-600 font-bold'>
          <div className="relative m-4 w-20">
 				<span className="absolute inset-y-0 left-0 flex items-center pl-2">
 					<button type="submit" title="Search" className="p-1 focus:outline-none focus:ring">
@@ -91,6 +91,18 @@ export const Dashboard = () => {
                    <img className='w-8 h-8' src={leave} alt="" />
 
                           <li>Leave</li>
+             
+                  </ul>
+                  </NavLink>
+        <NavLink to='/' className={({ isActive }) => 
+    `flex px-6 w-60 mx-4 items-center my-2 py-3 rounded-lg gap-3 ${isActive ? 'bg-[#01010133]' : 'hover:bg-[#01010133]'}`
+  }> 
+                
+                    
+             <ul className='flex items-center gap-3'>
+                   <img className='w-6 h-6' src='https://www.svgrepo.com/show/493950/home-home.svg' alt="" />
+
+                          <li>Back to Home</li>
              
                   </ul>
                   </NavLink>

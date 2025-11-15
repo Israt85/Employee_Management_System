@@ -1,7 +1,12 @@
+import { useContext } from 'react';
 import adminpic from '../assets/admin.jpg' 
 import message from '../assets/message.png'
+
 export const DashboardNav = () => {
+   
+
   return (
+   
    <div>
          <div className='lg:hidden block'>
         
