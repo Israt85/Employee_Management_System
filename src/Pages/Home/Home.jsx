@@ -6,6 +6,11 @@ import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import heroImage from '../../assets/hero-image.png';
 
+import ramishImg from "../../assets/ramish.jpeg";
+import mumuImg from "../../assets/mumu.png";
+import saifaImg from "../../assets/saifa.jpeg";
+import tasminImg from "../../assets/tasmin.jpg";
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800 scroll-smooth">
@@ -16,10 +21,13 @@ const Home = () => {
             AURORA<span className="text-gray-700">HR</span>
           </div>
           <nav className="hidden md:flex gap-6 text-sm font-medium">
+            <a href="#" className="hover:text-indigo-600">Home</a>
+
             <a href="#features" className="hover:text-indigo-600">Features</a>
             <a href="#about" className="hover:text-indigo-600">About</a>
             <a href="#faq" className="hover:text-indigo-600">FAQ</a>
             <a href="#contact" className="hover:text-indigo-600">Contact</a>
+            <a href="#testimonials" className="hover:text-indigo-600">Ratings</a>
             <Link to="/login" className="hover:text-indigo-600">Login</Link>
             <Link to="/signup" className="hover:text-indigo-600">Sign Up</Link>
          
@@ -118,23 +126,63 @@ const Home = () => {
   </div>
 
   {/* TEAM SECTION */}
-  <div className="max-w-6xl mx-auto px-6 text-center">
-    <h3 className="text-2xl font-bold text-gray-800 mb-8">Meet Our Team</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <div className="bg-indigo-50 p-6 rounded-lg shadow-sm">
-        <h4 className="text-lg font-semibold text-indigo-700">Ramish Jahra Binte Hossain</h4>
-        <p className="text-sm text-gray-600">CSE 031 08171</p>
-      </div>
-      <div className="bg-indigo-50 p-6 rounded-lg shadow-sm">
-        <h4 className="text-lg font-semibold text-indigo-700">Israt Anjuman Mumu</h4>
-        <p className="text-sm text-gray-600">CSE 030 07879</p>
-      </div>
-      <div className="bg-indigo-50 p-6 rounded-lg shadow-sm">
-        <h4 className="text-lg font-semibold text-indigo-700">Saifa Binte Aziz</h4>
-        <p className="text-sm text-gray-600">CSE 031 08179</p>
-      </div>
+<div className="max-w-6xl mx-auto px-6 text-center py-16">
+  <h3 className="text-3xl font-bold text-gray-800 mb-12">Meet Our Team</h3>
+
+  {/* Supervisor */}
+  <div className="mb-16 flex justify-center">
+    <div className="bg-indigo-50 p-8 rounded-2xl shadow-md hover:shadow-lg transition w-64">
+      <img
+        src={tasminImg}
+        alt="Tasmin Akther"
+        className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
+      />
+      <h4 className="text-lg font-semibold text-indigo-700">Tasmin Akther</h4>
+      <p className="text-sm text-gray-600">Supervisor</p>
     </div>
   </div>
+
+  {/* Team Members */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+    {/* Member 1 */}
+    <div className="bg-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+      <img
+        src={ramishImg}
+        alt="Ramish"
+        className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
+      />
+      <h4 className="text-lg font-semibold text-indigo-700">
+        Ramish Jahra Binte Hossain
+      </h4>
+      <p className="text-sm text-gray-600">CSE 031 08171</p>
+    </div>
+
+    {/* Member 2 */}
+    <div className="bg-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+     <img
+  src={mumuImg}
+  alt="Mumu"
+  className="w-28 h-28 mx-auto rounded-full object-cover object-center scale-110"
+/>
+      <h4 className="text-lg font-semibold text-indigo-700">Israt Anjuman Mumu</h4>
+      <p className="text-sm text-gray-600">CSE 030 07879</p>
+    </div>
+
+    {/* Member 3 */}
+    <div className="bg-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+     
+<img
+  src={saifaImg}
+  alt="Saifa"
+  className="w-28 h-28 mx-auto rounded-full object-cover object-center scale-110"
+/>
+      <h4 className="text-lg font-semibold text-indigo-700">Saifa Binte Aziz</h4>
+      <p className="text-sm text-gray-600">CSE 031 08179</p>
+    </div>
+
+  </div>
+</div>
 
   {/* CORE VALUES */}
   <div className="max-w-6xl mx-auto px-6 mt-16">
@@ -191,47 +239,158 @@ const Home = () => {
     </Link>
   </div>
 </section>
-      {/* TESTIMONIALS */}
-<section id="testimonials" className="py-20 bg-white">
-  <div className="max-w-5xl mx-auto px-6 text-center">
-    <h2 className="text-3xl font-bold mb-12">What People Are Saying</h2>
-    <div className="grid md:grid-cols-2 gap-8">
-      <blockquote className="bg-gray-100 p-6 rounded-lg shadow text-left">
-        <p className="text-gray-700 italic">“AURORA has completely streamlined our HR process. It’s intuitive, fast, and reliable.”</p>
-        <footer className="mt-4 text-sm text-gray-500">— Sarah M., HR Manager at NovaTech</footer>
-      </blockquote>
-      <blockquote className="bg-gray-100 p-6 rounded-lg shadow text-left">
-        <p className="text-gray-700 italic">“We onboarded 20+ employees in a week thanks to AURORA. The dashboard is a game changer.”</p>
-        <footer className="mt-4 text-sm text-gray-500">— Arif H., Operations Lead at SoftEdge</footer>
-      </blockquote>
+{/* TESTIMONIALS */}
+<section id="testimonials" className="py-24 bg-indigo-50">
+  <div className="max-w-5xl mx-auto px-6">
+    <h2 className="text-4xl font-extrabold text-center mb-14 text-gray-900">
+      What People Think About Us
+    </h2>
+
+    {/* Testimonial Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      
+      {/* Card 1 */}
+      <div className="bg-white rounded-xl shadow-md px-6 py-6 flex flex-col font-serif">
+        <p className="text-lg text-gray-800 italic flex-1">
+          AURORA makes employee management incredibly smooth. The UI is intuitive
+          and the export feature is a lifesaver!
+        </p>
+
+        <div className="mt-4 text-yellow-500 text-lg">★★★★★</div>
+
+        <h4 className="text-xl font-semibold text-indigo-800 mt-4 text-right italic">
+          ~ Sadia Rahman
+        </h4>
+      </div>
+
+      {/* Card 2 */}
+      <div className="bg-white rounded-xl shadow-md px-6 py-6 flex flex-col font-serif">
+        <p className="text-lg text-gray-800 italic flex-1">
+          Very helpful for HR tasks. I’d love to see more analytics features in future updates.
+        </p>
+
+        <div className="mt-4 text-yellow-500 text-lg">★★★★☆</div>
+
+        <h4 className="text-xl font-semibold text-indigo-800 mt-4 text-right italic">
+          ~ Tanvir Alam
+        </h4>
+      </div>
+
     </div>
-  </div>
-</section>
-{/* FAQ SECTION */}
-<section id="faq" className="py-20 bg-indigo-50">
-  <div className="max-w-4xl mx-auto px-6">
-    <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
-    <div className="space-y-6">
-      <div>
-        <h4 className="font-semibold text-indigo-700">Is AURORA free to use?</h4>
-        <p className="text-gray-700">Yes! You can start with a free account and explore all core features without any cost.</p>
-      </div>
-      <div>
-        <h4 className="font-semibold text-indigo-700">Do I need technical skills to use it?</h4>
-        <p className="text-gray-700">Not at all. AURORA is built for HR teams and managers — no coding required.</p>
-      </div>
-      <div>
-        <h4 className="font-semibold text-indigo-700">Can I export employee data?</h4>
-        <p className="text-gray-700">Yes, you can export reports in CSV or PDF format with just a few clicks.</p>
-      </div>
-      <div>
-        <h4 className="font-semibold text-indigo-700">Is my data secure?</h4>
-        <p className="text-gray-700">Absolutely. We use industry-standard encryption and role-based access to protect your data.</p>
+
+    {/* Review Form */}
+    <div className="bg-white p-8 rounded-xl shadow-lg">
+      <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center font-serif">
+        Leave a Review
+      </h3>
+
+      <form
+        className="space-y-4"
+        onSubmit={(e) => {
+          e.preventDefault();
+
+          // Clear fields
+          e.target.reset();
+
+          // Show thank you message
+          document.getElementById("thank-you").classList.remove("hidden");
+
+          // Hide after 3 seconds
+          setTimeout(() => {
+            document.getElementById("thank-you").classList.add("hidden");
+          }, 3000);
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Your Name"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 font-serif"
+        />
+
+        <textarea
+          placeholder="Your Review"
+          rows="4"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 font-serif italic"
+        ></textarea>
+
+        <div className="rating flex space-x-1">
+          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
+          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+        >
+          Submit Review
+        </button>
+      </form>
+
+      <div
+        id="thank-you"
+        className="hidden mt-6 text-green-600 font-medium text-center font-serif"
+      >
+        Thank you, your ratings and reviews have been submitted.
       </div>
     </div>
   </div>
 </section>
 
+
+
+{/* FAQ SECTION */}
+<section id="faq" className="py-24 bg-gray-50">
+  <div className="max-w-5xl mx-auto px-6">
+    <h2 className="text-4xl font-extrabold text-center mb-14 text-gray-900">Frequently Asked Questions</h2>
+
+    <div className="space-y-6">
+      <div className="collapse collapse-arrow bg-indigo-100 rounded-xl shadow-md transition-all duration-300">
+        <input type="checkbox" />
+        <div className="collapse-title text-xl font-semibold text-indigo-800 px-6 py-5">
+          Is AURORA free to use?
+        </div>
+        <div className="collapse-content bg-white text-base text-gray-800 px-6 pb-6 rounded-b-xl">
+          Yes! AURORA offers a free tier that gives you access to all essential features without any upfront cost. You can onboard your team, manage employee data, and explore the platform’s capabilities at no charge. It’s a great way to evaluate the system before upgrading to premium plans for advanced analytics and integrations.
+        </div>
+      </div>
+
+      <div className="collapse collapse-arrow bg-indigo-100 rounded-xl shadow-md transition-all duration-300">
+        <input type="checkbox" />
+        <div className="collapse-title text-xl font-semibold text-indigo-800 px-6 py-5">
+          Do I need technical skills to use it?
+        </div>
+        <div className="collapse-content bg-white text-base text-gray-800 px-6 pb-6 rounded-b-xl">
+          Not at all. AURORA is designed with simplicity in mind, tailored for HR professionals and team managers. The interface is intuitive, with guided workflows and helpful prompts, so you can manage employee records, performance, and feedback without writing a single line of code.
+        </div>
+      </div>
+
+      <div className="collapse collapse-arrow bg-indigo-100 rounded-xl shadow-md transition-all duration-300">
+        <input type="checkbox" />
+        <div className="collapse-title text-xl font-semibold text-indigo-800 px-6 py-5">
+          Can I export employee data?
+        </div>
+        <div className="collapse-content bg-white text-base text-gray-800 px-6 pb-6 rounded-b-xl">
+          Yes, exporting employee data is quick and flexible. You can generate reports in CSV or PDF format, allowing you to share insights with stakeholders, archive records, or integrate with other systems. The export feature supports filters and custom fields to tailor the output to your needs.
+        </div>
+      </div>
+
+      <div className="collapse collapse-arrow bg-indigo-100 rounded-xl shadow-md transition-all duration-300">
+        <input type="checkbox" />
+        <div className="collapse-title text-xl font-semibold text-indigo-800 px-6 py-5">
+          Is my data secure?
+        </div>
+        <div className="collapse-content bg-white text-base text-gray-800 px-6 pb-6 rounded-b-xl">
+          Absolutely. AURORA uses enterprise-grade security protocols to safeguard your information. All data is encrypted both in transit and at rest, and access is controlled through role-based permissions. Regular audits and compliance with data protection standards ensure your organization’s privacy is always a top priority.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       {/* CTA */}
       <section className="py-16 bg-indigo-600 text-white">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -262,7 +421,21 @@ const Home = () => {
           
         </div>
       </section>
-
+{/*Location*/}
+<section id="location" className="text-center py-16 bg-white">
+  <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Us</h2>
+  <p className="text-gray-700 mb-6">
+    We're located at Port City International University, Chattogram.
+  </p>
+  <a
+    href="https://www.google.com/maps/place/Port+City+International+University"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+  >
+    View Exact Location
+  </a>
+</section>
       {/* FOOTER */}
       <footer className="bg-gray-900 text-gray-300 text-sm pt-12 pb-6">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
