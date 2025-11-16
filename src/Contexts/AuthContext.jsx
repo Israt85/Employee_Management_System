@@ -34,22 +34,29 @@ export const AuthProvider = ({ children }) => {
 }, []);
 
 
-const signin = (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password)
-    .then((result) => {
-      setUser(result.user);
-      console.log("Signed in user:", result.user);
-      return result;
-    });
+const signin = async (email, password) => {
+  const result = await signInWithEmailAndPassword(auth, email, password);
+ ;
+
+  if (!result.user.emailVerified) {
+    await fbSignOut(auth);
+    throw new Error("Email not verified. Please check your inbox and verify before logging in.");
+  }
+
+  setUser(result.user);
+  console.log("Signed in user:",result.user);
+  return result;
 };
+
 
 const signup = async (email, password) => {
   const result = await createUserWithEmailAndPassword(auth, email, password);
-  await sendEmailVerification(result.user);
+  await sendEmailVerification(result.user);   // ✅ sends verification email
   setUser(result.user);
   console.log("Signed up user:", result.user);
   return result;
 };
+
 
 
   const signinWithGoogle = () => {

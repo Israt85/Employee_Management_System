@@ -19,23 +19,29 @@ export const SignUp = () => {
   const [loading, setLoading] = useState(false);
 
   // Submit handler
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError("");
 
-    if (password !== confirmPass) {
-      return setError("Passwords do not match!");
-    }
+  if (password !== confirmPass) {
+    return setError("Passwords do not match!");
+  }
 
-    try {
-      setLoading(true);
-      await firebaseSignup(email, password);
-      navigate("/dashboard");
-    } catch (err) {
-      setError(err.message);
-    }
-    setLoading(false);
-  };
+  try {
+    setLoading(true);
+    await firebaseSignup(email, password);
+
+    // ✅ Alert user to check email
+    alert("Verification email sent! Please check your inbox and verify before logging in.");
+
+    // Optional: redirect to login page instead of dashboard
+    navigate("/login");
+  } catch (err) {
+    setError(err.message);
+  }
+  setLoading(false);
+};
+
 
   return (
     <div className="w-full flex justify-center mx-auto min-h-screen pt-12 bg-linear-to-r from-sky-100 to-sky-400">

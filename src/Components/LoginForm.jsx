@@ -7,19 +7,22 @@ export default function Form() {
   const { signin, signinWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+ const handleLogin = async (e) => {
+  e.preventDefault();
+  const email = e.target.email.value;
+  const password = e.target.password.value;
 
-    try {
-      const result = await signin(email, password);
-      console.log("Logged in user:", result.user); // ✅ see user in console
-      navigate("/"); // redirect after login
-    } catch (err) {
-      console.error("Login failed:", err);
-    }
-  };
+  try {
+    const result = await signin(email, password);
+    console.log("Logged in user:", result.user); 
+    navigate("/"); 
+  } catch (err) {
+   
+    console.error("Login failed:", err.message);
+    alert(err.message); 
+  }
+};
+
 
   const handleGoogleLogin = async () => {
     try {

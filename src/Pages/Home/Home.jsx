@@ -1,10 +1,9 @@
-import React from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-import heroImage from '../../assets/hero-image.png';
 
 import ramishImg from "../../assets/ramish.jpeg";
 import mumuImg from "../../assets/mumu.png";
@@ -12,103 +11,38 @@ import saifaImg from "../../assets/saifa.jpeg";
 import tasminImg from "../../assets/tasmin.jpg";
 import Navbar from '../Shared/Navbar';
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Hero from '../../Components/Home/Hero';
+import { Features } from '../../Components/Home/Features';
+import { useEffect, useRef } from 'react';
+import TeamSection from '../../Components/Home/Team';
+import Testimonials from '../../Components/Home/Testimonials';
+import CTASection from '../../Components/Home/CTASection';
+import CoreValues from '../../Components/Home/CoreValues';
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 
 
 
 const Home = () => {
+  
+
+  
   return (
     <div className="min-h-screen bg-white text-gray-800 scroll-smooth">
       {/* NAVBAR */}
      <Navbar></Navbar>
-       {/* <header className="w-full bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-indigo-600 tracking-tight">
-            AURORA<span className="text-gray-700">HR</span>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <a href="#" className="hover:text-indigo-600">Home</a>
-
-            <a href="#features" className="hover:text-indigo-600">Features</a>
-            <a href="#about" className="hover:text-indigo-600">About</a>
-            <a href="#faq" className="hover:text-indigo-600">FAQ</a>
-            <a href="#contact" className="hover:text-indigo-600">Contact</a>
-            <a href="#testimonials" className="hover:text-indigo-600">Ratings</a>
-            <Link to="/login" className="hover:text-indigo-600">Login</Link>
-            <Link to="/signup" className="hover:text-indigo-600">Sign Up</Link>
-         
-          </nav>
-        </div>
-      </header> */}
 
       {/* HERO */}
-<section className="bg-gradient-to-br from-indigo-50 to-white py-20">
-  <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    
-    {/* Left: Text Content */}
-    <div>
-      <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-gray-900 mb-6">
-        Empower your team with smarter HR tools
-      </h1>
-      <p className="text-gray-600 text-lg mb-8">
-        AURORA helps you manage employees, departments, assets, and recruitment — all in one place.
-      </p>
-      <div className="flex flex-wrap gap-4">
-        <Link to="/signup" className="px-6 py-3 bg-indigo-600 text-white rounded-md font-semibold hover:opacity-90">
-          Get Started
-        </Link>
-        <a href="#features" className="px-6 py-3 border border-gray-300 rounded-md font-medium hover:bg-gray-100">
-          View Features
-        </a>
-      </div>
-    </div>
+      <Hero></Hero>
 
-   <div className="hidden md:block">
-  <img
-  src={heroImage}
-  alt="Interface preview"
-  className="w-full max-w-md mx-auto md:mx-0 mix-blend-multiply bg-transparent"
-/>
-</div>
-  </div>
-</section>
+
+
 {/* FEATURES SLIDER */}
-<section id="features" className="py-24 bg-gray-50">
-  <div className="max-w-4xl mx-auto px-6">
-    <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-16">
-      What You Can Do with AURORA
-    </h2>
-
-    <Swiper
-      modules={[Pagination]}
-      spaceBetween={24}
-      slidesPerView={1}
-      pagination={{
-        clickable: true,
-        el: '.custom-swiper-pagination',
-      }}
-      grabCursor={true}
-    >
-      {[
-        ['Employee Management', 'Track employee records, roles, and performance.'],
-        ['Department Structuring', 'Create and manage departments with assigned leads.'],
-        ['Asset Tracking', 'Assign and monitor company assets with ease.'],
-        ['Recruitment Tools', 'Post jobs, manage applicants, and schedule interviews.'],
-        ['Leave Management', 'Approve requests and track balances in real-time.'],
-        ['Reports & Exports', 'Generate CSV/PDF reports with role-based access.'],
-      ].map(([title, desc]) => (
-        <SwiperSlide key={title}>
-          <div className="p-8 bg-blue-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 h-full text-center">
-            <h3 className="text-2xl font-extrabold text-indigo-900 mb-4">{title}</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">{desc}</p>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-
-    {/* Pagination dots outside the card */}
-    <div className="custom-swiper-pagination mt-6 flex justify-center" />
-  </div>
-</section>
+<Features></Features>
       {/* ABOUT SECTION */}
 <section id="about" className="py-20 bg-white">
   <div className="max-w-4xl mx-auto px-6 text-center">
@@ -131,76 +65,9 @@ const Home = () => {
   </div>
 
   {/* TEAM SECTION */}
-<div className="max-w-6xl mx-auto px-6 text-center py-16">
-  <h3 className="text-3xl font-bold text-gray-800 mb-12">Meet Our Team</h3>
-
-  {/* Supervisor */}
-  <div className="mb-16 flex justify-center">
-    <div className="bg-indigo-50 p-8 rounded-2xl shadow-md hover:shadow-lg transition w-64">
-      <img
-        src={tasminImg}
-        alt="Tasmin Akther"
-        className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
-      />
-      <h4 className="text-lg font-semibold text-indigo-700">Tasmin Akther</h4>
-      <p className="text-sm text-gray-600">Supervisor</p>
-    </div>
-  </div>
-
-  {/* Team Members */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-
-    {/* Member 1 */}
-    <div className="bg-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-      <img
-        src={ramishImg}
-        alt="Ramish"
-        className="w-28 h-28 mx-auto rounded-full object-cover mb-4"
-      />
-      <h4 className="text-lg font-semibold text-indigo-700">
-        Ramish Jahra Binte Hossain
-      </h4>
-      <p className="text-sm text-gray-600">CSE 031 08171</p>
-    </div>
-
-    {/* Member 2 */}
-    <div className="bg-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-     <img
-  src={mumuImg}
-  alt="Mumu"
-  className="w-28 h-28 mx-auto rounded-full object-cover object-center scale-110"
-/>
-      <h4 className="text-lg font-semibold text-indigo-700">Israt Anjuman Mumu</h4>
-      <p className="text-sm text-gray-600">CSE 030 07879</p>
-    </div>
-
-    {/* Member 3 */}
-    <div className="bg-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-     
-<img
-  src={saifaImg}
-  alt="Saifa"
-  className="w-28 h-28 mx-auto rounded-full object-cover object-center scale-110"
-/>
-      <h4 className="text-lg font-semibold text-indigo-700">Saifa Binte Aziz</h4>
-      <p className="text-sm text-gray-600">CSE 031 08179</p>
-    </div>
-
-  </div>
-</div>
-
+ <TeamSection></TeamSection>
   {/* CORE VALUES */}
-  <div className="max-w-6xl mx-auto px-6 mt-16">
-    <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Our Core Values</h3>
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-left text-gray-700">
-      <li>💡 Simplicity in every interaction</li>
-      <li>🤝 Empathy for teams and users</li>
-      <li>🚀 Relentless pursuit of improvement</li>
-      <li>🔒 Trust through transparency</li>
-      <li>📈 Data-driven decisions</li>
-      <li>🌍 Building for global impact</li>
-    </ul>
-  </div>
+ <CoreValues></CoreValues>
 
   {/* COMPANY TIMELINE */}
   <div className="max-w-4xl mx-auto px-6 mt-16 text-center">
@@ -245,106 +112,7 @@ const Home = () => {
   </div>
 </section>
 {/* TESTIMONIALS */}
-<section id="testimonials" className="py-24 bg-indigo-50">
-  <div className="max-w-5xl mx-auto px-6">
-    <h2 className="text-4xl font-extrabold text-center mb-14 text-gray-900">
-      What People Think About Us
-    </h2>
-
-    {/* Testimonial Cards */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-      
-      {/* Card 1 */}
-      <div className="bg-white rounded-xl shadow-md px-6 py-6 flex flex-col font-serif">
-        <p className="text-lg text-gray-800 italic flex-1">
-          AURORA makes employee management incredibly smooth. The UI is intuitive
-          and the export feature is a lifesaver!
-        </p>
-
-        <div className="mt-4 text-yellow-500 text-lg">★★★★★</div>
-
-        <h4 className="text-xl font-semibold text-indigo-800 mt-4 text-right italic">
-          ~ Sadia Rahman
-        </h4>
-      </div>
-
-      {/* Card 2 */}
-      <div className="bg-white rounded-xl shadow-md px-6 py-6 flex flex-col font-serif">
-        <p className="text-lg text-gray-800 italic flex-1">
-          Very helpful for HR tasks. I’d love to see more analytics features in future updates.
-        </p>
-
-        <div className="mt-4 text-yellow-500 text-lg">★★★★☆</div>
-
-        <h4 className="text-xl font-semibold text-indigo-800 mt-4 text-right italic">
-          ~ Tanvir Alam
-        </h4>
-      </div>
-
-    </div>
-
-    {/* Review Form */}
-    <div className="bg-white p-8 rounded-xl shadow-lg">
-      <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center font-serif">
-        Leave a Review
-      </h3>
-
-      <form
-        className="space-y-4"
-        onSubmit={(e) => {
-          e.preventDefault();
-
-          // Clear fields
-          e.target.reset();
-
-          // Show thank you message
-          document.getElementById("thank-you").classList.remove("hidden");
-
-          // Hide after 3 seconds
-          setTimeout(() => {
-            document.getElementById("thank-you").classList.add("hidden");
-          }, 3000);
-        }}
-      >
-        <input
-          type="text"
-          placeholder="Your Name"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 font-serif"
-        />
-
-        <textarea
-          placeholder="Your Review"
-          rows="4"
-          required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 font-serif italic"
-        ></textarea>
-
-        <div className="rating flex space-x-1">
-          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
-          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
-          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
-          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
-          <input type="radio" name="rating" className="mask mask-star-2 bg-orange-400" />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
-        >
-          Submit Review
-        </button>
-      </form>
-
-      <div
-        id="thank-you"
-        className="hidden mt-6 text-green-600 font-medium text-center font-serif"
-      >
-        Thank you, your ratings and reviews have been submitted.
-      </div>
-    </div>
-  </div>
-</section>
+<Testimonials></Testimonials>
 
 
 
@@ -397,22 +165,7 @@ const Home = () => {
   </div>
 </section>
       {/* CTA */}
-      <section className="py-16 bg-indigo-600 text-white">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-2xl font-bold">Ready to streamline your HR?</h3>
-            <p className="text-sm mt-1">Start your free account and set up your first department in minutes.</p>
-          </div>
-          <div className="flex gap-4">
-            <Link to="/signup" className="px-5 py-2 bg-white text-indigo-600 rounded-md font-semibold hover:bg-gray-100">
-              Create Account
-            </Link>
-            <Link to="/login" className="px-5 py-2 border border-white rounded-md font-medium hover:bg-white hover:text-indigo-600">
-              Sign In
-            </Link>
-          </div>
-        </div>
-      </section>
+    <CTASection></CTASection>
 
       {/* CONTACT SECTION */}
       <section id="contact" className="py-20 bg-indigo-50">
@@ -427,8 +180,6 @@ const Home = () => {
         </div>
       </section>
 {/*Location*/}
-
-
 <section>
   <div className="w-full flex justify-center items-center py-10">
   <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-4xl border border-gray-200">
